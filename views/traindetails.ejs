@@ -1,0 +1,126 @@
+<%- include('partials/header'); -%>
+<body class="bgb">
+  <nav class="navbar" style="background: transparent; border-width: 0px">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand txt" href="/">Travel Buddy</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="txt" href="/about" style="background-color: transparent">About</a></li>
+          <li><a class="txt" href="/about" style="background-color: transparent">Creator</a></li>
+        </ul>
+      </div>
+    </nav>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-8">
+                <h1 class="display-4">Your train details</h1>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Train number</th>
+                        <th scope="col">Train name</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%= num %></td>
+                        <td><%= name %></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <form action="/traindetails/request" method="POST">
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Name</label>
+                            <input type="name" class="form-control" name="name">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Train number</label>
+                            <input type="text" class="form-control" name="trainnumber">
+                          </div>
+                        </div>
+                        
+                        <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Car Number</label>
+                            <input type="text" class="form-control" name="carnumber">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>seat Number</label>
+                            <input type="text" class="form-control" name="seatnumber">
+                          </div>
+                          </div>
+                        <div class="form-row">
+                          <div class="form-group col-md-12">
+                            <label for="inputZip">WP number</label>
+                            <input type="text" class="form-control" name="wpnumber">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                          <div class="col-md-12">
+                            <input class="form-control" type="date" value="2011-08-19" name="date">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <button type="submit" class="btn btn-primary">Add your details</button>
+                            </div>
+                          </div>
+      
+                      </form>
+                </div>
+                
+                  
+            
+            
+            </div>      
+      </div>
+  </div>
+  <div class="container">
+    <div class="row">
+        <!-- <div class="col-md-3 col-sm-6">
+        form to add your details -->
+
+
+        </div>
+        <% vitian.forEach(function(vitian){ %>
+        <%if(num==vitian.trainnumber){ %>
+        <div class="col-md-3 col-sm-6">
+        <!--cards of all vitian -->
+          <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><%= vitian.name%></h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Wp number</h6>
+                  <h5><%= vitian.number%></h5>
+                  <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Travel Date</th>                           
+                            <th scope="col">Train Number</th>                           
+                            <th scope="col">Train Car</th>
+                            <th scope="col">Train seat</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><%= vitian.date%></td>
+                            <td><%= vitian.trainnumber%></td>
+                            <td><%= vitian.CarNumber%></td>
+                            <td><%= vitian.CarSeat%></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                </div>
+          </div>
+        </div>
+        <% } %>
+        <% }); %>
+    </div>
+  </div>
+<%- include('partials/footer'); -%>
+
