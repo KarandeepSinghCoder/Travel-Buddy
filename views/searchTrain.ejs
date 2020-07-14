@@ -1,0 +1,133 @@
+<%- include('partials/header'); -%>
+ <!-- ***********Navbar Starts*************** -->
+ <section id="nav-bar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"><img src="img/logo.pgn" alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- *******font-awesome icon*******   -->
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#banner">Search Train</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#aboutus">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#creator">Creator</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="#contactid">Contribute</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+ </section>
+ <!-- ***********Navbar Ends*************** -->
+<!----------------banner setion -->
+ <section id="banner">
+   <div class="container">
+     <div class="row">
+        <div class="col-md-6">
+            <p class="promo-title">Find your Travel mate</p>
+            <!--Form to search the train-->
+                <form action="/traindetails" method="POST" class="text-center">
+                    <div class="input-group" style="margin:auto;">
+                        <input  class="form-control text-center" type="number" placeholder="enter train number" name="num">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <!-- style="background-color: white; border: none" -->
+                </form>
+            <!--search form ends-->
+            <p style="margin-top: 20px;">Its fun travelling with friends,this site will help you to find your Tarvel mates. As of now this site works only for the trains travelling viya KATPADI JN. We are looking forward to extend our data for CHENNAI CENTRAL also soon.</p>
+        </div>
+        <div class="col-md-6">
+          <!-- <img src="">  $$$$$$$$$$$image is to be added$$$$$$$ -->
+        </div>
+     </div>
+   </div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#fff" fill-opacity="1" d="M0,128L80,112C160,96,320,64,480,85.3C640,107,800,181,960,192C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+</svg>
+ </section>
+ <!--banner ends-->
+<!-- -------------------------------------------ABOUT US----------------------------------- -->
+<section  id="aboutus">
+<div class="container aboutus text-center">
+  <div><h1 class="text-center font-weight-bold">ABOUT</h1></div>
+  <div>
+    <p>Mr oh winding it enjoyed by between. The servants securing material goodness her. Saw principles themselves ten are possession. So endeavor to continue cheerful doubtful we to. Turned advice the set vanity why mutual. Reasonably if conviction on be unsatiable discretion apartments delightful. Are melancholy appearance stimulated occasional entreaties end. Shy ham had esteem happen active county. Winding morning am shyness evident to. Garrets because elderly new manners however one village she.</p>
+  </div>
+</div>
+</section>
+<!-- -------------------------------------------ABOUT US----------------------------------- -->
+
+
+ <!-------------------------------------Creator--------------------------------------->
+ <section class="creator text-white" id="creator">
+ <div class="container heading text-center">
+   <h1 class="text-center font-weight-bold">CREATOR</h1>
+    <div class="row">
+      <div class="col-md-12">
+          <div class="card mx-auto">
+              <div class="card-header">
+                  <img src="/asserts/img/kd.jpg" class="img-circle rounded-circle" alt="Cinque Terre" width="100" height="100">
+                  <div>
+                  <h3 style="font-size:3vw;">Karandeep Singh</h3>
+                </div>
+              </div>
+              <div class="card-body">
+                  <p style="font-size:1vw;">Hello there. I'm a passionate young programmer, who has experience in a couple of programming languages. I believe in solving real world problems using programming</p>
+              </div>
+              <div class="card-footer">
+                <p style="font-size:3vw;">Follow me on</p>
+                <a href="https://github.com/KarandeepSinghCoder"><i style="font-size:2vw;" class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/karandeepsingh_chandi/"><i style="font-size:2vw;" class="fab fa-instagram"></i></a>
+                <a href="linkedin.com/in/karandeep-singh-018155157"><i style="font-size:2vw;" class="fab fa-linkedin-in"></i></a>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!------------------------Creator ends------------------->
+<!------------------------contribute start------------------->
+<section class="contactus" id="contactid">
+  <div class="container heading text-center">
+    <h1 class="text-center font-weight-bold">Contribute</h1>
+    <p>If you are willing to Contribute to our site please fill the form.</p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-10 offset-lg-2 offset-md-2 offset-sm-1">
+          <form>
+
+              <div class="form-group">
+                <input type="text" class="form-control" id="nameContributer" required placeholder="username">
+              </div>
+
+              <div class="form-group">
+                  <input type="email" class="form-control" id="emailContributer" required aria-describedby="emailHelp" placeholder="Enter email">
+                  <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+              
+              <div class="form-group">
+                 <input type="text" class="form-control" id="issueContributer"  required placeholder="hilight the isue or a new feture">
+              </div>
+              <div class="form-group">
+                  <textarea class="form-control" rows="3" id="comment" placeholder="How will you solve the issue"></textarea>
+                </div>
+                <div class="d-flex justify-content-center ">
+                  <button type="submit" class="btn form-button">Submit</button>
+                </div>
+            </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!------------------------contribute ends------------------->
+<%- include('partials/footer'); -%>
