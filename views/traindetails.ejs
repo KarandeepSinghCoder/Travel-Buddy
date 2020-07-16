@@ -18,10 +18,7 @@
                         <td class="text-white-j"><%= name %></td>
                       </tr>
                     </tbody>
-                  </table>
-                  
-                  
-                
+                  </table>          
               <!--Form to search the train-->
               <div class="col-lg-6" id="page2-search">
                 <h4>SEARCH ANOTHER TRAIN</h4>
@@ -90,7 +87,6 @@
         <% vitian.forEach(function(vitian){ %>
         <%if(num==vitian.trainnumber){ %>
         <div class="col-md-4 col-sm-12">
-
           <!--cards of all vitian -->
           <div class="card" style="width: 18rem;">
                 <div class="card-body">
@@ -122,7 +118,6 @@
         <% }); %>
     </div>
   </div>
-
 <!-- ********footer************ -->
   <footer class="footersection" id="footerfdiv">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -146,5 +141,25 @@
       </div>
     </div>
   </footer>
-  
+  <script>
+    $('.count').counterUp({
+      delay: 10,
+      time: 3000
+    })
+    mybutton= document.getElementById("myBtn");
+
+    window.onscroll=function(){scrollFunction()};
+    function scrollFunction(){
+      if(document.body.scroll>20 || document.documentElement.scrollTop>20){
+        mybutton.style.display="block";
+      }else{
+        mybutton.style.display="none";
+      }
+    }
+    function topFunction(){
+      document.body.scrollTop=0;
+      document.documentElement.scrollTop=0;
+    }
+    
+    </script>
   <!------------------------footer ends------------------->

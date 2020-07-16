@@ -193,6 +193,9 @@ form:hover .form-button{
     color: #fff;
     opacity: 0.85;
 }
-/* #page2-search form button{
-    place
-} */
+#img{
+    display:block;
+    height: 25vw;
+    width: 45vw;
+    margin: 0 auto;
+} 
