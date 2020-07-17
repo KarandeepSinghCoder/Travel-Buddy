@@ -7,7 +7,7 @@ var express     = require("express"),
     vitian  = require("./modles/vitian");
     app.use('/', express.static('public'));
 var traindata = require('./public/asserts/data/traindata.json');
-var port = process.emv.PORT || 3001;
+var port = process.env.PORT || 3001;
 mongoose
 .connect("mongodb://localhost/vitian", {
 useUnifiedTopology: true,
