@@ -8,16 +8,27 @@ var express     = require("express"),
     app.use('/', express.static('public'));
 var traindata = require('./public/asserts/data/traindata.json');
 var port = process.env.PORT || 3001;
-mongoose
-.connect("mongodb://localhost/vitian", {
-useUnifiedTopology: true,
-useNewUrlParser: true,
-})
-.then(() => console.log('DB Connected!'))
-.catch(err => {
-    console.log("fail");
-    console.log(err);
+
+
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://travelbuddyvit:Karan@143@travelbuddyvit.3j8c3.mongodb.net/vitian?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+	   console.log("fail");
+    console.log("err");
 });
+
+
+// mongoose
+// .connect("mongodb://localhost/vitian", {
+// useUnifiedTopology: true,
+// useNewUrlParser: true,
+// })
+// .then(() => console.log('DB Connected!'))
+// .catch(err => {
+//     console.log("fail");
+//     console.log(err);
+// });
 
 // vitian.create(
 //         {
