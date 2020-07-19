@@ -10,8 +10,16 @@ var traindata = require('./public/asserts/data/traindata.json');
 var port = process.env.PORT || 3001;
 
 
+// const MongoClient = require('mongodb').MongoClient;
+// const uri = "mongodb+srv://travelbuddyvit:Karan@143@travelbuddyvit.3j8c3.mongodb.net/vitian?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true,useUnifiedTopology: true  });
+// client.connect(err => {
+// 	   console.log("fail");
+//     console.log("err");
+// });
+
 mongoose
-.connect("mongodb+srv://travelbuddyvit:Karan@143@travelbuddyvit.3j8c3.mongodb.net/vitian?retryWrites=true&w=majority", {
+.connect("mongodb+srv://vitian:vitian.123@travelbuddyvit.3j8c3.mongodb.net/vitian?retryWrites=true&w=majority", {
 useUnifiedTopology: true,
 useNewUrlParser: true,
 })
@@ -20,18 +28,6 @@ useNewUrlParser: true,
     console.log("fail");
     console.log(err);
 });
-
-
-// mongoose
-// .connect("mongodb://localhost/vitian", {
-// useUnifiedTopology: true,
-// useNewUrlParser: true,
-// })
-// .then(() => console.log('DB Connected!'))
-// .catch(err => {
-//     console.log("fail");
-//     console.log(err);
-// });
 
 // vitian.create(
 //         {
