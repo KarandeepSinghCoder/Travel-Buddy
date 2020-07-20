@@ -2,7 +2,7 @@
 
 About
 _____
-
+It's always fun travelling with friends. This site will help you to find your Travel mates. As of now this site works only for the trains travelling via KATPADI JN. We are looking forward to extend our data for CHENNAI CENTRAL soon.
 
 dependencies
 ____________
