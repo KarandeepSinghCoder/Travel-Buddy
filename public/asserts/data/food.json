@@ -1,0 +1,82 @@
+﻿[
+        {
+            "Station": "Ahmedabad Junction ",
+            "Code": "ADI"
+        },
+        {
+            "Station": "Bhopal Junction",
+            "Code": "BPL"
+        },
+        {
+            "Station": "Bilaspur Junction",
+            "Code": "BSP"
+        },
+        {
+            "Station": "Itarsi Junction",
+            "Code": "ET"
+        },
+        {
+            "Station": "Kanpur Central",
+            "Code": "CNB"
+        },
+        {
+            "Station": "Nagpur",
+            "Code": "NGP"
+        },
+        {
+            "Station": "Satna Junction",
+            "Code": "STA"
+        },
+        {
+            "Station": "Siliguri Junction",
+            "Code": "SGUJ"
+        },
+        {
+            "Station": "Surat Junction",
+            "Code": "ST"
+        },
+        {
+            "Station": "Vijayawada Junctoin",
+            "Code": "BZA"
+        },
+        {
+            "Station": "Balharshah Junction",
+            "Code": "BPQ"
+        },
+        {
+            "Station": "Bhusawal Junction",
+            "Code": "BSL"
+        },
+        {
+            "Station": "Gwalior Junction",
+            "Code": "GWL"
+        },
+        {
+            "Station": "Jhansi",
+            "Code": "JHS"
+        },
+        {
+            "Station": "Luckhnow Charbagh",
+            "Code": "LKO"
+        },
+        {
+            "Station": "Pune Junction",
+            "Code": "PUNE"
+        },
+        {
+            "Station": "Secunderabad Junction",
+            "Code": "SC"
+        },
+        {
+            "Station": "Solapur Junction",
+            "Code": "SUP"
+        },
+        {
+            "Station": "Vadodra Junction",
+            "Code": "BRC"
+        },
+        {
+            "Station": "Visakhapatnam Junction",
+            "Code": "VSKP"
+        }
+    ]

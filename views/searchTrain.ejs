@@ -9,18 +9,36 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#banner">Search Train</a>
-        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#banner">Search Train</a>
+          </li>
+          
+          <li class="nav-item">
+              <a class="nav-link" href="#Cab_Sharing">Cab</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#prefered_train">Prefered trains</a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#food_details">Food</a>
+            </li>
+
+
         <li class="nav-item">
           <a class="nav-link" href="#aboutus">About</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#creator">Creator</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#contactid">Contribute</a>
-          </li>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profile</a>
+      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -31,8 +49,18 @@
    <div class="container">
      <div class="row">
         <div class="col-md-6">
-            <p class="promo-title">Find your Travel mate</p>
+            <p class="promo-title">Find your Travel mate <%= user.name %></p>
             <!--Form to search the train-->
+            <% if(typeof alert != 'undefined') { %>
+              <% alert.forEach(function(error) { %>
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <%= error.msg %>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+              <% }) %>
+          <% } %>
                 <form action="/traindetails" method="POST" class="text-center">
                     <div class="input-group" style="margin:auto;">
                         <input  class="form-control text-center" type="number" placeholder="enter train number" name="num">
@@ -51,8 +79,100 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
   <path fill="#fff" fill-opacity="1" d="M0,128L80,112C160,96,320,64,480,85.3C640,107,800,181,960,192C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
 </svg>
- </section>
- <!--banner ends-->
+</section>
+<!--banner ends-->
+
+<!----------------------------------CAB sharing--------------------------------->
+<section id="Cab_Sharing" style="padding-top: 0%;margin-top: 0%" >
+
+<div class="card" style="width: 100%; text-align: center;border: none;padding-top: 60px">
+    <h1>SHARE YOUR CAB TO</h1>
+    <div style="align-items: center;">
+    <img src="/asserts/img/taxi.png" class="img-thumbnail" width="500" height="600" style="border: none">
+  </div>
+    <div class="card-body">
+      
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container" style="text-align: center">
+                    <h1 class="display-8 font-weight-bold" style="color: #a517ba">BANGALORE</h1>
+                    <p class="lead">Share a cab with your friend</p>
+                    <a href="/cabtobangalore"><button type="submit" class="btn btn-primary bt" >Find Your Cab</button></a>
+                  </div>
+                  </div>
+              </div>  
+          <div class="col-md-6">
+              <div class="jumbotron jumbotron-fluid">
+                <div class="container" style="text-align: center">
+                <h1 class="display-8 font-weight-bold" style="color: #a517ba">CHENNAI</h1>
+                <p class="lead">Share a cab with your friend</p>
+                <a href="/cabtochennai"><button type="submit" class="btn btn-primary bt" >Find Your Cab</button></a>
+              </div>
+              </div>
+            </div>
+        </div>
+    </section>
+    </div>
+  </div>
+<!----------------------------------CAB sharing--------------------------------->
+<!----------------------------------TRAINS TO BANGLORE AND CHENNAI--------------------------------->
+<section id="prefered_train">
+<div class="card" style="width: 100%; text-align: center;border: none;">
+    <h1>MOST PREFERED TRAINS TO</h1>
+    <div style="align-items: center;">
+      <img src="/asserts/img/train2.png" class="img-thumbnail" width="400" height="400" style="border: none">
+    </div>
+    <div class="card-body" style="padding-top: 0%">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container" style="text-align: center">
+                    <h1 class="display-8 font-weight-bold" style="color: #a517ba">BANGALORE</h1>
+                    <p class="lead">The Ranking of this trains is decided as per the total points given by VITIAN's</p>
+                    <a href="/preferedtrainstoBANGALORE"><button type="submit" class="btn btn-primary bt" >let's see</button></a>
+                  </div>
+                  </div>
+              </div>  
+          <div class="col-md-6">
+              <div class="jumbotron jumbotron-fluid">
+                <div class="container" style="text-align: center">
+                <h1 class="display-8 font-weight-bold" style="color: #a517ba">CHENNAI</h1>
+                <p class="lead">The Ranking of this trains is decided as per the total points given by VITIAN's</p>
+                <a href="/preferedtrainstoCHENNAI"><button type="submit" class="btn btn-primary bt" >let's see</button></a>
+              </div>
+              </div>
+            </div>
+    </div>
+    </section>
+    </div>
+  </div>
+<!----------------------------------TRAINS TO BANGLORE AND CHENNAI--------------------------------->
+<!-- ===================FOOD==================== -->
+<!----------------------------------Food Details--------------------------------->
+<section id="food_details">
+    <div class="container" style="padding-top: 60px;">
+        <div class="row">
+            <div class="col-md-6">
+              <img src="/asserts/img/food.png" width="100%">
+              </div>  
+          <div class="col-md-6">
+              <div class="jumbotron jumbotron-fluid">
+                <div class="container" style="text-align: center">
+                <h1 class="display-4 font-weight-bold" style="color: #a517ba">Food on Tracks</h1>
+                <p class="lead">This recomendations are made by other vitan's.</p>
+                <a href="/food"><button type="submit" class="btn btn-primary bt" >Let's Go</button></a>
+              </div>
+              </div>
+            </div>
+    </div>
+    </section>
+    <!----------------------------------FOOD Details--------------------------------->
+    <!-- ===================FOOD==================== -->
+
+
 <!-- -------------------------------------------ABOUT US----------------------------------- -->
 <section  id="aboutus">
 <div class="container aboutus text-center">
@@ -65,27 +185,55 @@
 </div>
 </section>
 <!-- -------------------------------------------ABOUT US----------------------------------- -->
+
+
+
 <!-------------------------------------Creator--------------------------------------->
  <section class="creator text-white" id="creator">
  <div class="container heading text-center">
    <h1 class="text-center font-weight-bold">CREATOR</h1>
-   <div class="card mx-auto shadow p-3 mb-5 bg-white rounded">
-    <div class="card-header">
-        <img src="/asserts/img/kd.jpg" class="img-circle rounded-circle" alt="Cinque Terre" width="100" height="100">
-        <div>
-        <h4 style="padding-top: 20px">Karandeep Singh</h4>
+   <div class="row">
+    <div class="col-md-6">
+
+        <div class="card mx-auto shadow p-3 mb-5 bg-white rounded">
+            <div class="card-header">
+                <img src="/asserts/img/kd.jpg" class="img-circle rounded-circle" alt="Cinque Terre" width="100" height="100">
+                <div>
+                <h4 style="padding-top: 20px">Karandeep Singh</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>Hello there. I'm a passionate young programmer, who has experience in a couple of programming languages. I believe in solving real world problems using programming. Hope this website will help you to make more friends and enjoy you journey.Being Able To Be Accompanied By Best People Around, The Drive To Excel In the Stream is all One Believes.</p>
+            </div>
+            <div class="card-footer">
+              <p>Follow me on</p>
+              <a href="https://github.com/KarandeepSinghCoder"><i class="fab fa-github"></i></a>
+              <a href="https://www.instagram.com/karandeepsingh_chandi/"><i  class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/karandeep-singh-018155157"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6">
+        <div class="card mx-auto shadow p-3 mb-5 bg-white rounded">
+            <div class="card-header">
+                <img src="/asserts/img/sir.jpg" class="img-circle rounded-circle" alt="Cinque Terre" width="100" height="100">
+                <div>
+                <h4 style="padding-top: 20px">Prof. Saravanakumar K</h4>
+                </div>
+            </div>
+            <div class="card-body">
+                <p>I feal really fortunate to have him as my faculty. He is a pationate teacher and a constant source of support to his students.Thanks to Saravanakumar sir for helping me building a proper database model for this site.He works really hard in creating online content on his site exploredatabase.com and now on youtube. Click below to avail the resources.</p>
+            </div>
+            <div class="card-footer">
+              <p>Follow Sir on</p>
+              <a href="http://www.exploredatabase.com/"><i class="fas fa-database"></i></a>
+              <a href="https://www.youtube.com/channel/UChCc9td2kC8icgY9F0Qyc2w"><i  class="fab fa-youtube"></i></a>
+              <a href="https://www.linkedin.com/in/saravanakumar-k-26b06724/"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </div>
-    <div class="card-body">
-        <p>Hello there. I'm a passionate young programmer, who has experience in a couple of programming languages. I believe in solving real world problems using programming.I am looking forward to pursuing a carrier in web development</p>
-    </div>
-    <div class="card-footer">
-      <p>Follow me on</p>
-      <a href="https://github.com/KarandeepSinghCoder"><i class="fab fa-github"></i></a>
-      <a href="https://www.instagram.com/karandeepsingh_chandi/"><i  class="fab fa-instagram"></i></a>
-      <a href="https://www.linkedin.com/in/karandeep-singh-018155157"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-</div>
+   </div>
   </div>
 </section>
 <!------------------------Creator ends------------------->
@@ -98,20 +246,15 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-10 offset-lg-2 offset-md-2 offset-sm-1">
-          <form>
+          <form action="/contribute" method="POST">
               <div class="form-group">
-                <input type="text" class="form-control" id="nameContributer" required placeholder="username">
-              </div>
-              <div class="form-group">
-                  <input type="email" class="form-control" id="emailContributer" required aria-describedby="emailHelp" placeholder="Enter email">
-                  <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                  <input type="email" class="form-control" name="emailContributer" id="emailContributer" required aria-describedby="emailHelp" placeholder="Enter email">
                 </div>
-              
               <div class="form-group">
-                 <input type="text" class="form-control" id="issueContributer"  required placeholder="Highlight the issues or a new feature">
+                 <input type="text" class="form-control" name="issueContributer" id="issueContributer"  required placeholder="Highlight the issues or a new feature">
               </div>
               <div class="form-group">
-                  <textarea class="form-control" rows="3" id="comment" placeholder="How will you solve the issue"></textarea>
+                  <textarea class="form-control" rows="3" name="sollution" placeholder="Suggest us a sollution"></textarea>
                 </div>
                 <div class="d-flex justify-content-center ">
                   <button type="submit" class="btn form-button">Submit</button>

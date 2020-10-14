@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/asserts/css/style.css">
+    <link rel="stylesheet" href="/asserts/css/home.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+</head>
+<body style="background:linear-gradient(to right, #a517ba, #5f1782);">
+     <section id="nav-bar">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="/"><img id="logo" src="/asserts/img/logo.jpg" alt=""></a>
+            <!-- *******font-awesome icon*******   -->
+        </nav>
+</section> 
+
+<section id="banner">
+        <div class="container">
+          <div class="row">
+             <div class="col-md-6 col-sm-12">
+                 <!--Form to search the train-->
+                 <% if(typeof alert != 'undefined') { %>
+                    <% alert.forEach(function(error) { %>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <%= error.msg %>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <% }) %>
+                <% } %>
+                 <div class="card">
+                    <div class="login-box">
+                        <div class="login-snip"> <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Login</label> <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                            <div class="login-space">
+                                <div class="login">
+                                    <form action="/login" method="POST">
+                                    <div class="group"> <label for="user" class="label">Email</label> <input id="user" type="text" class="input" name="username" placeholder="Enter Registered email"> </div>
+                                    <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" name="password"  placeholder="Enter your password"> </div>
+                                    <div class="group"> <input type="submit" class="button" value="Sign In"> </div>
+                                    <div class="hr"></div>
+                                    </form>
+                                </div>
+
+                                <div class="sign-up-form">
+                                    <form action="/register" method="POST">
+                                    <div class="group"> <label for="user" class="label">Email Address</label> <input id="user" type="email" class="input" name="username" placeholder="Enter your email" required> </div>
+                                    <div class="group"> <label for="pass" class="label">Name</label> <input id="email" type="text" name="name" class="input" placeholder="Enter your user name" required> </div>
+                                    <div class="group"> <label for="user" class="label">WhatsApp Number</label> <input id="WPnum" type="text" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="input" maxlength="10" name="WPnum" placeholder="Enter WhatsApp Number [ONLY NUMBERS ALLOWED]" required> </div>
+                                    <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" class="input" name="password" data-type="password" placeholder="Create your password" required> </div>
+                                    <div class="group"> <input type="submit" class="button" value="Sign Up"> </div>
+                                    <div class="hr"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+<!--search form ends-->
+        </div>
+             <div class="col-md-6 col-sm-12" style="text-align: right;">
+                <h1 >Welcome to Travel Budy</h1>
+                <img id="img" src="/asserts/img/train8.jpg">
+            </div>
+        </div>
+        </div>
+      </section>
+</body>
+</html>

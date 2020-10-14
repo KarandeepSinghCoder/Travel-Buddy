@@ -1,0 +1,30 @@
+// vitian.create(
+//         {
+//             date: "25/11/2020",
+//         	trainnumber: "12757",
+//             name: "KD",
+//             number: "9090262977",
+//             CarNumber: "B2",
+//             CarSeat: "56"
+//         },function(err,campground){
+//             if(err){
+//                 console.log("error");
+//             }else{
+//                 console.log("New Vitian ");
+//                 console.log(vitian);
+//             }
+//         });
+
+// TrainstoBan.create(
+//             {
+//                 Num: "18637	",
+//             	NameofTrain: "Bengaluru Cantt Express",
+//                 Dates_of_running: "Mo We Fr",
+//                 points: 20
+//             },function(err,campground){
+//                 if(err){
+//                     console.log("error");
+//                 }else{
+//                     console.log("New Banglore trains ");
+//                 }
+//             });

@@ -1,6 +1,10 @@
 <%- include('partials/header'); -%>
+<% var test = 0; %>
 <section id="jumbo-page2">
-<div class="jumbotron jumbotron-fluid" id="jb-m">
+    <div style="text-align: right; padding-right: 20px">
+        <a href="/logout"><button type="submit" id="jb-btn" class="btn btn-primary">Logout</button></a>
+    </div>
+  <div class="jumbotron jumbotron-fluid" id="jb-m">
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-sm-8">
@@ -10,12 +14,18 @@
                       <tr>
                         <th class="text-white-j" scope="col">Train number</th>
                         <th class="text-white-j" scope="col">Train name</th>
+                        <th class="text-white-j" scope="col">See Review of</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td class="text-white-j"><%= num %></td>
                         <td class="text-white-j"><%= name %></td>
+                        <td class="text-white-j">
+                          <form action="/review" method="post">
+                            <input type="submit" name="num" id="Review-bt" placeholder="Review" value="<%= num %>"/>
+                        </form>
+                        </td>
                       </tr>
                     </tbody>
                   </table>          
@@ -30,36 +40,50 @@
                   <!-- style="background-color: white; border: none" -->
               </form>
             </div>
+            
           <!--search form ends-->
           </div>
                 <div class="col-md-4 col-sm-4">
+                    <% if(typeof alert != 'undefined') { %>
+                      <% alert.forEach(function(error) { %>
+                          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                              <%= error.msg %>
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                      <% }) %>
+                  <% } %>
                     <form action="/traindetails/request" method="POST">
                         <div class="form-row">
                           <div class="form-group col-md-6">
                             <label>Name</label>
-                            <input type="name" class="form-control" name="name" required>
+                            <input type="name" class="form-control" name="name" value="<%= user.name %>" required>
                           </div>
                           <div class="form-group col-md-6">
                             <label>Train number</label>
-                            <input type="text" class="form-control" name="trainnumber" required>
+                            <input type="number" class="form-control" value="<%= num %>" name="trainnumber" required>
                           </div>
                         </div>
-                        
                         <div class="form-row">
                           <div class="form-group col-md-6">
                             <label>Car Number</label>
-                            <input type="text" class="form-control" name="carnumber">
+                            <input type="text" class="form-control" name="carnumber" >
                           </div>
                           <div class="form-group col-md-6">
                             <label>seat Number</label>
-                            <input type="text" class="form-control" name="seatnumber">
+                            <input type="number" class="form-control" name="seatnumber">
                           </div>
                           </div>
                         <div class="form-row">
-                          <div class="form-group col-md-12">
+                          <div class="form-group col-md-6">
                             <label for="inputZip">WP number</label>
-                            <input type="text" class="form-control" name="wpnumber" required>
+                            <input type="text" class="form-control" name="wpnumber" value="<%= user.WPnum %>" required>
                           </div>
+                          <div class="form-group col-md-6">
+                            <label>Boarding Station</label>
+                            <input type="text" class="form-control" name="station" required>
+                          </div>  
                         </div>
                         <div class="form-row">
                           <label for="example-date-input" class="col-2 col-form-label">Date</label>
@@ -86,13 +110,14 @@
     <div class="row">
         <% vitian.forEach(function(vitian){ %>
         <%if(num==vitian.trainnumber){ %>
+          <% test++ %>
         <div class="col-md-4 col-sm-12">
           <!--cards of all vitian -->
-          <div class="card" style="width: 18rem;">
+          <div class="card" style="width: 20rem;">
                 <div class="card-body">
                   <h5 class="card-title"><%= vitian.name%></h5>
-                  <!-- <h6 class="card-subtitle mb-2 text-muted">Wp number</h6> -->
                   <h5><span><i class="fab fa-whatsapp"></i></span><%= vitian.number%></h5>
+                  <h6><span style="font-weight: bold">Station</span>  <%= vitian.station%></h6>
                   <table class="table">
                         <thead>
                           <tr>
@@ -117,7 +142,45 @@
         <% } %>
         <% }); %>
     </div>
+    <% if(test == 0) { %>
+      <h4 style="text-align: center;color: red">As of now we don't have any entries for <%= name %> </h4>
+      <h5 style="text-align: center;color: green">Have fun using TRAVEL BUDDY</h5>
+    <% } %>
   </div>
+  <section class="contactus" id="contactid">
+      <div class="container heading text-center">
+        <h1 class="text-center font-weight-bold">Add a review to this train</h1>
+        <p>If you are willing to add a review to this train please fill the form.</p>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-10 offset-lg-2 offset-md-2 offset-sm-1">
+              <form action="/newreview" method="POST">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Train number</label>
+                    <input type="text" class="form-control" value="<%= num %>" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="5" name="trainnum" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label>Points</label>
+                    <input type="number" class="form-control" placeholder="between 1 to 5" min="1" max="5" name="reviewpoints" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Remarks</label>
+                    <input type="text" placeholder="ex-hygienic"  class="form-control" name="reviewRemarks">
+                  </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12 text-center">
+                        <button type="submit" id="jb-btn" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+              </form>
+          </div>
+        </div>
+      </div>
+    </section>
 <!-- ********footer************ -->
   <footer class="footersection" id="footerfdiv">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -129,7 +192,7 @@
             <div>
               <h3>ABOUT TRAVEL BUDDY</h3>
               <p>It's always fun travelling with friends. This site will help you to find your Travel mates. As of now this site works only for the trains travelling via KATPADI JN. We are looking forward to extend our data for CHENNAI CENTRAL soon.</p>
-              <button  id="jb-btn" class="btn btn-primary"><a  style="color: #fff" href="/">Home</a></button>
+              <button  id="jb-btn" class="btn btn-primary"><a  style="color: #fff" href="/searchTrain">Home</a></button>
             </div>
         </div>
       </div>

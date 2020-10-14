@@ -65,6 +65,18 @@ body{
     line-height: 30px;
 }
 /* *************ABOUT US ENDS********** */
+.bt{
+    border-style: none;
+    margin-top: 20px;
+    border-radius: 100px;
+    background-color: #a517ba;
+    color: #fff;
+    font-size: 18px;    
+}
+.bt:hover{
+    background-color: #5f1782;
+    color: #fff;
+}
 
 /* **********creator********* */
 .card{
@@ -200,3 +212,19 @@ form:hover .form-button{
     width: 45vw;
     margin: 0 auto;
 } 
+#upvotes-btn{
+    /* display: none; */
+    /* margin: 20px; */
+    text-align: center;
+    border: none;
+    color: #fff;
+    background:  #a517ba;
+    /* padding-top: 10px; */
+    padding-left: 20%;
+    padding-right: 10%;
+    border-radius: 100px;
+
+}
+#upvotes-btn:hover{
+    background: #5f1782;
+}

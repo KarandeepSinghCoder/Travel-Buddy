@@ -1,0 +1,156 @@
+<%- include('partials/header'); -%>
+ <!-- ***********Navbar Starts*************** -->
+  <section id="jumbo-page2">
+      <div style="text-align: right; padding-right: 20px">
+          <a href="/logout"><button type="submit" id="jb-btn" class="btn btn-primary">Logout</button></a>
+      </div>
+    <div class="jumbotron jumbotron-fluid" id="jb-m">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-sm-8">
+                  <h1 class="display-4">Get to know what can you get on other stations</h1>
+                  <p>This information soly depends upon the data provided by other vitians</p>
+ <!--Form to search the station-->
+                <div class="col-lg-6" id="page2-search">
+                  <h4>SEARCH VIA STATION CODE</h4>
+                  <% if(typeof alert != 'undefined') { %>
+                    <% alert.forEach(function(error) { %>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <%= error.msg %>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                    <% }) %>
+                <% } %>
+                  <form action="/ViewStationfood" method="POST" class="text-center">
+                    <div class="input-group" style="margin:auto;">
+                        <input  class="form-control text-center" type="text" placeholder="enter Station code" name="stationCode">
+                    </div>
+                    <button type="submit" id="jb-btn" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+<!--search form ends-->
+            </div>
+                  <div class="col-md-4 col-sm-4">
+                    <h1>Help us to Bild this database.</h1>                 
+                      <form action="/Stationfood" method="POST">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label>Station Code</label>
+                              <input type="name" class="form-control text-uppercase" placeholder="ex- KPD" name="StationCode" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label>Dish name</label>
+                              <input type="text" class="form-control" placeholder="ex- sandwich" name="dish_name" required>
+                            </div>
+                          </div>
+      
+                          <div class="form-row">
+                            <div class="form-group col-md-12">
+                              <label>WP number of the store owner</label>
+                              <input type="number" placeholder="ex- 9090262988" class="form-control" name="WP_number" required>
+                            </div>
+                            </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <label for="inputZip">Available at platform</label>
+                              <input type="numbers" class="form-control" placeholder="1,2,3" name="platform" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <label>your Remarks if any</label>
+                              <input type="text" class="form-control" name="Remarks">
+                            </div>  
+                          </div>
+                          
+                          <div class="form-row">
+                              <div class="form-group col-md-12 text-center">
+                                  <button type="submit" id="jb-btn" class="btn btn-primary">Add your details</button>
+                              </div>
+                            </div>
+                        </form>
+                  </div>
+                  <!-- <h4 style="letter-spacing: 0.1em;">Find your friends below <samp style="margin-left: 40px; font-size: 100px"><i class="far fa-hand-point-down"></i></samp> </h4> -->
+              </div>
+        </div>
+      </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#fff" fill-opacity="1" d="M0,128L80,112C160,96,320,64,480,85.3C640,107,800,181,960,192C1120,203,1280,149,1360,122.7L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+    </svg>
+  </section>
+  
+ <div class="container">
+       <!-- Order your food -->
+       <div class="card" style="align-items: center;border: none;" >
+        <h1>E-catering services of IRCTC is available at</h1>
+        <div style="padding: 0% 30%">
+          <img class="card-img-top" src="/asserts/img/food.png" width="100" height="350" alt="Card image cap" >
+        </div>
+          <div class="card-body">
+            <a href="https://www.ecatering.irctc.co.in/" id="jb-btn" class="btn btn-primary" style="border: none;">Order your food</a>
+          </div>
+        </div>
+ 
+      <!-- Order your food Ends-->
+ 
+  <div class="row">
+    <div class="col-md-6">
+    <!-- Stations name -->
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col">STATION NAME</th>
+            <th scope="col">STATION CODE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(var i=0; i<10; i++) {%>
+          <tr>
+            <td><%= food[i].Station %></td>
+            <td><%= food[i].Code %></td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-6 col-sm-12">
+      <table class="table table-hover">
+          <thead>
+            <tr>
+              <!-- <th scope="col">#</th> -->
+              <th scope="col">STATION NAME</th>
+              <th scope="col">STATION CODE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=10; i<20; i++) {%>
+            <tr>
+              <td><%= food[i].Station %></td>
+              <td><%= food[i].Code %></td>
+            </tr>
+            <% } %>
+          </tbody>
+        </table>
+    </div>
+ </div>
+</div>
+<footer class="footersection" id="footerfdiv">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#fff" fill-opacity="1" d="M0,0L48,53.3C96,107,192,213,288,218.7C384,224,480,128,576,117.3C672,107,768,181,864,213.3C960,245,1056,235,1152,213.3C1248,192,1344,160,1392,144L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+      </svg>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12  footer-div text-center">
+            <div>
+              <h3>ABOUT TRAVEL BUDDY</h3>
+              <p>It's always fun travelling with friends. This site will help you to find your Travel mates. As of now this site works only for the trains travelling via KATPADI JN. We are looking forward to extend our data for CHENNAI CENTRAL soon.</p>
+              <button  id="jb-btn" class="btn btn-primary"><a  style="color: #fff" href="/searchTrain">Home</a></button>
+            </div>
+        </div>
+      </div>
+      <div class="mt-5 text-center">
+        <p>Copyright @2020 All rights reserved</p>
+      </div>
+    </div>
+  </footer>
