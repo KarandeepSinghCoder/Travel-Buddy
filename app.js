@@ -111,7 +111,7 @@ app.post("/traindetails",[
     const errors = validationResult(req);
         if(!errors.isEmpty()) {
             const alert = errors.array()
-            res.render("searchTrain",{user: req.user,alert});
+            res.render("searchTrain",{user: req.user,alert,err: 1});
         }
         else{
     //to show train details
@@ -455,12 +455,11 @@ app.post("/review",function(req,res){
 });
 });
 app.post("/newreview",function(req,res){
-    var num      = req.body.trainnum;
+    var num      =      req.body.trainnum;
     var reviewpoints  = req.body.reviewpoints;
     var reviewRemarks = req.body.reviewRemarks;
     var newreview={trainnumber: num, points:reviewpoints, Remarks: reviewRemarks};
-    console.
-    review.create(newreview,function(err,newreview){
+    review.create(newreview,function(err, newreview){
         if(err){
             console.log(err);
         }else{
