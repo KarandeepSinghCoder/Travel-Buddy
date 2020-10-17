@@ -100,8 +100,9 @@ function isLoggedIn(req,res,next){
 
 app.get("/searchTrain",isLoggedIn,function(req,res){
     //to search train by its number
+    var err=0;
     res.render("searchTrain", {
-        user: req.user
+        user: req.user,err: err
       });
 });
 app.post("/traindetails",[
@@ -115,12 +116,15 @@ app.post("/traindetails",[
         else{
     //to show train details
     var num=req.body.num;
+    var flag =0;
     for(var i = 0; i < traindata.length; i++) {
         var obj = traindata[i];
        if(obj.number==num){
            var id=i;
+           flag =1;
            break;
        }}
+       if(flag == 1){
        vitian.find({},function(err, allvitian){
         if(err){
             console.log(err);
@@ -128,6 +132,13 @@ app.post("/traindetails",[
             res.render("traindetails", {num: num,name: traindata[id].trainName,vitian: allvitian,user: req.user});
         }
 });
+       }
+       else{
+            var err=1;
+            res.render("searchTrain", {
+                user: req.user,err: err
+              });
+       }
         }
 });
 app.post("/traindetails/request",[
@@ -471,6 +482,7 @@ app.post("/newreview",function(req,res){
         }
     )
 });
+
 // *************************** Review ****************************
     app.listen(port,function(){
         console.log("server is on");

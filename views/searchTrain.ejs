@@ -51,6 +51,9 @@
         <div class="col-md-6">
             <p class="promo-title">Find your Travel mate <%= user.name %></p>
             <!--Form to search the train-->
+            <% if(err == 1) { %>
+              <h4 style="text-align: center;color: red">Enter a valid train number</h4>
+            <% } %>
             <% if(typeof alert != 'undefined') { %>
               <% alert.forEach(function(error) { %>
                   <div class="alert alert-warning alert-dismissible fade show" role="alert">
