@@ -23,9 +23,8 @@ const { check, validationResult } = require('express-validator')
 var traindata = require('./public/asserts/data/traindata.json');
 var food = require('./public/asserts/data/food.json'); 
 var port = process.env.PORT || 3001;
-// mongodb+srv://vitian:vitian.123@travelbuddyvit.3j8c3.mongodb.net/vitian?retryWrites=true&w=majority
 mongoose
-.connect("mongodb+srv://vitian:vitian.123@travelbuddyvit.3j8c3.mongodb.net/vitian?retryWrites=true&w=majority", {
+.connect("URL_here", {
 useUnifiedTopology: true,
 useNewUrlParser: true,
 })
