@@ -26,6 +26,9 @@ Travel Buddy helps my fellow VITIAN’s to find their colleagues travelling in t
     "save": "^2.4.0"
 ```
 
+## Page View
+![image](https://user-images.githubusercontent.com/50829119/124011961-35a72880-d9fe-11eb-9035-7866148a7bb8.png)
+
 ## Architecture
 
 ### Schema 
